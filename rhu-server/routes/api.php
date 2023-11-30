@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HouseholdController;
 use App\Http\Controllers\ResidentProfileController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\FamilyProfileController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/addHousehold', [HouseholdController::class, 'store']);
 Route::get('/getHouseholds', [HouseholdController::class, 'getHousehold']);
+Route::get('/getAllHouseholdsWithRelation', [HouseholdController::class, 'getAllHouseholdsWithRelation']);
 
 Route::post('/addResident', [ResidentProfileController::class, 'store']);
 Route::get('/getResidents', [ResidentProfileController::class, 'getResidents']);
@@ -30,3 +32,6 @@ Route::post('/addNewImmunization',[AppointmentController::class,'store_immunizat
 
 Route::get('/getPrenatalRecord',[AppointmentController::class,'get_all_prenatal_record']);
 Route::get('/getImmunizationRecord',[AppointmentController::class,'get_all_immunization_record']);
+
+Route::post('/addFamilyProfile',[FamilyProfileController::class,'store']);
+Route::get('/getFamilyProfile',[FamilyProfileController::class,'index']);

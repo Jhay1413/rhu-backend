@@ -44,6 +44,10 @@ class AppointmentController extends Controller
             'next_vaccination_date'  => 'required',
             'vaccination_notes'      => 'required',
             'appointment_type'       => 'required',
+            'weight'       => 'required',
+            'weight_status'       => 'required',
+
+
         ]);
         $immunization_data = ImmunizationRecord::create($immunization_validated_data);
 

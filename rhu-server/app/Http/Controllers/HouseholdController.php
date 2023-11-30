@@ -29,4 +29,8 @@ class HouseholdController extends Controller
         $households = Household::all();
         return response()->json($households);
     }
+    public function getAllHouseholdsWithRelation () {
+        $households = Household::with('resident', 'family_profile')->get();
+        return response()->json($households);
+    }
 }

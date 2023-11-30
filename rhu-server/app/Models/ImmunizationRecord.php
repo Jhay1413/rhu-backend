@@ -15,7 +15,9 @@ class ImmunizationRecord extends Model
         'vaccination_site',
         'next_vaccination_date',
         'vaccination_notes',
-        'appointment_type'
+        'appointment_type',
+        'weight',
+        'weight_status'
     ];
     public function resident () {
         return $this->belongsTo(ResidentProfile::class,'patient_id','id');

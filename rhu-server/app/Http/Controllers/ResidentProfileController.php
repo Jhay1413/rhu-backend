@@ -14,6 +14,7 @@ class ResidentProfileController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'age' => 'required',
+            'age_in_months' => 'required',
             'address'=>'required',
             'contact_number' => 'required',
             'email' => 'required',
@@ -22,7 +23,6 @@ class ResidentProfileController extends Controller
             'household_type'=>'required',
             'household_id'=>'required',
 
-            
         ]);
 
         $resident = ResidentProfile::create($validatedData);

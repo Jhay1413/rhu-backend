@@ -11,6 +11,7 @@ class ResidentProfile extends Model
         'first_name',
         'last_name',
         'age',
+        'age_in_months',
         'address',
         'contact_number',
         'email',
@@ -20,7 +21,7 @@ class ResidentProfile extends Model
         'household_id'
     ];
    public function household (){
-    return $this->belongsTo(Household::class);
+    return $this->belongsTo(Household::class,'household_id','id');
    }
    public function prenatal(){
     return $this->hasMany(PrenatalRecord::class);

@@ -19,4 +19,8 @@ class Household extends Model
        
         return $this->hasMany(ResidentProfile::class);
     }
+    public function family_profile(){
+        return $this->hasOne(Family_profile::class);
+        
+    }
 }
